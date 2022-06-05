@@ -1,7 +1,7 @@
-import "./homescreen.scss";
+import "./submission.scss";
 import Typewriter from 'typewriter-effect'
 
-export default function HomeScreen( {setFile, setHomeActive, submitFile }) {
+export default function Submission( {setFile, setSubmissionActive, submitFile }) {
 
   
   const fileReader = new FileReader();
@@ -28,7 +28,7 @@ export default function HomeScreen( {setFile, setHomeActive, submitFile }) {
           <button
             onClick={(e) => {
               e.preventDefault();
-              setHomeActive(false);
+              setSubmissionActive(false);
               submitFile();
             }}
           >
