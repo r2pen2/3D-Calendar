@@ -24,11 +24,9 @@ function App() {
      
     // Event listener on reader when the file
     // loads, we parse it and set the data.
-    reader.onload = async ({ target }) => {
-        const csv = Papa.parse(target.result, { header: true });
-        const parsedData = csv?.data;
-        const columns = Object.keys(parsedData[0]);
-        setData(columns);
+    reader.onload =  ({ target }) => {
+      const csv = Papa.parse(target.result, { header: true })
+      if (csv) { setData(csv.data) }
     };
     reader.readAsText(file);
 };
